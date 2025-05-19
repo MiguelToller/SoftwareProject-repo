@@ -4,24 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Currículo Profissional</h1>
-    <img src="Zoboomafoo.jpg" width="15%" title="Zoboomafoo">
 
-    <h2>Nome: Zoboomafoo <br> Profissão: Ator</h2>
+    <div class="mycontainer">
+        <img src="Zoboomafoo.jpg" alt="Zoboomafoo" width="30%" title="Zoboomafoo" style="border-radius: 50%">
+        <h2 style="font-size: 20px; padding: 20px">Nome: Zoboomafoo <br> Profissão: Ator</h2>
+    </div>
 
     <h2>Biografia</h2>
-    <p>Meu nome é Zubumafu, nasci em 1994 na Carolina do Norte e sou um ator de televisão renomado.</p>
-    
+    <p style="width: 40%">Meu nome é <strong>Zubumafu</strong>, nasci em 1994 na <mark>Carolina do Norte</mark> e sou um ator de televisão renomado.</p>
+    <p class="destaque">Destaque</p>
+    <p class="destaque importante">Titulo destaque e importante</p>
+
     <h2>Habilidades</h2>
-    <ul>
+    <ul style="background-color: #c4c4f1; width: 10%; font-family: 'Arial'; border-radius: 50px; border: 2px solid">
         <li>Proativo</li>
         <li>Comprometido</li>
         <li>Profissional</li>
     </ul>
 
+    <br><table>
+        <th>Habilidade</th>
+        <th>Nível</th>
+        <th>Experiência</th>
+        <tr>
+            <td>Proativo</td>
+            <td>20</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Juca</td>
+            <td>22</td>
+            <td>6</td>
+        </tr>
+    </table>
+
     <h2>Redes Sociais</h2>
-    <a href="https://youtu.be/9AJDNsgRFuQ?si=uYCGVq0b0qmJQ7Lc">Zoboomafoo Abertura</a>
+    <a href="https://youtu.be/9AJDNsgRFuQ?si=uYCGVq0b0qmJQ7Lc" target="_blank">
+        <img src="https://i0.wp.com/socialkings.online/wp-content/uploads/2021/03/Artboard-1yt.png?fit=650%2C534&ssl=1" width="5%" title="Abertura Zoboomafoo">
+    </a>
+
+    <a href="https://pt.wikipedia.org/wiki/Zoboomafoo" target="_blank">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Wikipedia-W-visual-balanced.svg/1280px-Wikipedia-W-visual-balanced.svg.png" width="5%" title="Wikipedia">
+    </a>
+
+    <button onclick="" style="border-radius: 50%; margin: 20px">Sair</button>
+
 </body>
 </html>
