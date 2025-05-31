@@ -5,7 +5,7 @@ p {
     margin: 20px;
 }
 body {
-    background-color: #9a9ae4;
+    background-color: #121212;
 }
 h1 {
     color: white;
@@ -39,6 +39,7 @@ button:hover {
 }
 
 table {
+    background-color: grey;
     font-family: Arial, serif;
     border-collapse: collapse;
     width: 50%;
@@ -58,8 +59,16 @@ th {
     background-color: white;
 }
 
+ul {
+    background-color: white;
+    width: 10%; 
+    font-family:'Arial'; 
+    border-radius: 50px; 
+    border: 2px solid;
+}
+
 .mycontainer {
-    background-color: #c4c4f1;
+    background-color: #3d3c3c;
     justify-content: left;
     display: flex;
     border-radius: 50px;
@@ -69,13 +78,4 @@ th {
     margin: 20px;
     border: 2px solid;
     width: 20%;
-}
-
-.destaque {
-    background-color: beige;
-    font-weight: bold;
-}
-
-.importante {
-    color: red;
 }

@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link id="theme" rel="stylesheet" href="style-light.css">
 </head>
 <body>
+
+    <button onclick="changeStyle('style-light.css')">Modo Claro</button>
+    <button onclick="changeStyle('style-dark.css')">Modo Escuro</button>
+
     <h1>Currículo Profissional</h1>
 
     <div class="mycontainer">
@@ -16,11 +20,9 @@
 
     <h2>Biografia</h2>
     <p style="width: 40%">Meu nome é <strong>Zubumafu</strong>, nasci em 1994 na <mark>Carolina do Norte</mark> e sou um ator de televisão renomado.</p>
-    <p class="destaque">Destaque</p>
-    <p class="destaque importante">Titulo destaque e importante</p>
 
     <h2>Habilidades</h2>
-    <ul style="background-color: #c4c4f1; width: 10%; font-family: 'Arial'; border-radius: 50px; border: 2px solid">
+    <ul>
         <li>Proativo</li>
         <li>Comprometido</li>
         <li>Profissional</li>
@@ -36,7 +38,7 @@
             <td>5</td>
         </tr>
         <tr>
-            <td>Juca</td>
+            <td>Comprometido</td>
             <td>22</td>
             <td>6</td>
         </tr>
@@ -51,7 +53,17 @@
         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/46/Wikipedia-W-visual-balanced.svg/1280px-Wikipedia-W-visual-balanced.svg.png" width="5%" title="Wikipedia">
     </a>
 
+    <a href="mailto:luizmigueltoller@gmail.com">
+        <img src="https://imgs.search.brave.com/2jWNmp02ltWayTWzb78BhaNCmPeAmWziAwcFZ8O2njY/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAxNC8w/My8yNS8xNi81NS9l/bWFpbC0yOTc2MzJf/NjQwLnBuZw" width="5%" title="E-mail">
+    </a>
+
     <button onclick="" style="border-radius: 50%; margin: 20px">Sair</button>
+
+<script>
+  function changeStyle(sheet) {
+    document.getElementById('theme').href = sheet;
+  }
+</script>
 
 </body>
 </html>
