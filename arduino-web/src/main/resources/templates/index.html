@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Controle do LED</title>
+    <link id="theme-link" rel="stylesheet" href="light.css" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f0f0f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 30px 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 320px;
+        }
+        .lampada {
+            width: 80px;
+            margin-bottom: 15px;
+            transition: filter 0.3s ease;
+        }
+        h1 {
+            margin-bottom: 25px;
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            border: none;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 15px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #status {
+            font-weight: bold;
+            min-height: 24px;
+            margin-top: 10px;
+        }
+        #status.ligado {
+            color: green;
+        }
+        #status.desligado {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <img id="lampada" class="lampada" src="https://cdn-icons-png.flaticon.com/512/2907/2907761.png" alt="Lâmpada apagada" />
+    <h1>Controle do LED</h1>
+
+    <button id="btn-ligar">Ligar LED</button>
+    <button id="btn-desligar">Desligar LED</button>
+
+    <p id="status"></p>
+</div>
+
+<script>
+    const status = document.getElementById('status');
+    const lampada = document.getElementById('lampada');
+
+    const lampadaApagada = "https://i.pinimg.com/originals/da/32/48/da32489eda1fbe4cb64737af5740649c.png";
+    const lampadaAcesa = "https://img.freepik.com/vetores-premium/ilustracao-do-vetor-de-luz-de-lampada_516670-384.jpg";
+
+    document.getElementById('btn-ligar').addEventListener('click', () => {
+        fetch('/led/ligar')
+            .then(response => response.text())
+            .then(text => {
+                status.textContent = text;
+                status.className = 'ligado';
+                lampada.src = lampadaAcesa;
+                lampada.alt = "Lâmpada ligada";
+            })
+            .catch(err => {
+                status.textContent = 'Erro ao ligar o LED';
+                status.className = 'desligado';
+                console.error(err);
+            });
+    });
+
+    document.getElementById('btn-desligar').addEventListener('click', () => {
+        fetch('/led/desligar')
+            .then(response => response.text())
+            .then(text => {
+                status.textContent = text;
+                status.className = 'desligado';
+                lampada.src = lampadaApagada;
+                lampada.alt = "Lâmpada desligada";
+            })
+            .catch(err => {
+                status.textContent = 'Erro ao desligar o LED';
+                status.className = 'desligado';
+                console.error(err);
+            });
+    });
+</script>
+
+</body>
+</html>
